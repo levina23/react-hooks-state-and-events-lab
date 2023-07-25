@@ -2,7 +2,7 @@ import React,{ useState }from "react";
 
 function Item({ name, category }) {
 
-  const [isInCart, setIsCart] = useState(false)
+  const [isInCart, setIsInCart] = useState(false)
 
   const toggleCartStatus = () => {
     setIsInCart(prevState => !prevState);

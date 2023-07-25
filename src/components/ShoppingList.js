@@ -3,17 +3,17 @@ import Item from "./Item";
 
 function ShoppingList({ items }) {
 
-    const [selectedCategory, setSelectedCategory] = useState("ALL");
+    const [selectedCategory, setSelectedCategory] = useState("All");
 
     const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   }
 
-  const filteredItems = setSelectedCategory === "ALL" ? items : items.filter(item => item.category === setSelectedCategory);
+  const filteredItems = selectedCategory === "All" ? items : items.filter(item => item.category === setSelectedCategory);
   return (
     <div className="ShoppingList">
       <div className="Filter">
-        <select name="filter" value={setSelectedCategory} onChange={handleCategoryChange}>
+        <select name="filter" value={selectedCategory} onChange={handleCategoryChange}>
           <option value="All">Filter by category</option>
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
